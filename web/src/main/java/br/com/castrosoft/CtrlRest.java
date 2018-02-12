@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CtrlRest {
 	
 	@RequestMapping("/")
-    String home() {
-        return "Hello World!";
+    public Mensagem home() {
+        return new Mensagem(EMensagens.BEM_VINDO);
     }
 }
