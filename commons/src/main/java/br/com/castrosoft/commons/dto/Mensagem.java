@@ -1,6 +1,6 @@
-package br.com.castrosoft.commons.enums;
+package br.com.castrosoft.commons.dto;
 
-import br.com.castrosoft.commons.dto.EMensagens;
+import br.com.castrosoft.commons.enums.EMensagens;
 
 public class Mensagem {
 	public String titulo;

@@ -1,4 +1,4 @@
-package br.com.castrosoft.commons.dto;
+package br.com.castrosoft.commons.enums;
 
 public enum EMensagens {
 	BEM_VINDO(1,  "Boas vindas", "Bem vindo");
