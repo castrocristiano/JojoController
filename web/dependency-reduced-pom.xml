@@ -159,6 +159,12 @@
       <version>1.5.10.RELEASE</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>br.com.castrosoft</groupId>
+      <artifactId>commons</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <properties>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
