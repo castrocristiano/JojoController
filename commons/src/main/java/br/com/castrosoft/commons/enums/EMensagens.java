@@ -1,7 +1,8 @@
 package br.com.castrosoft.commons.enums;
 
 public enum EMensagens {
-	BEM_VINDO(1,  "Boas vindas", "Bem vindo");
+	BEM_VINDO(1,  "Boas vindas", "Bem vindo"), 
+	ACAO(2,  "Registrar Ação", "");
 	
 	EMensagens(int cod, String titulo, String descricao) {
 		this.cod = cod;
