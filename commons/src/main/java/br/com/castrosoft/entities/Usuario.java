@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -31,10 +30,14 @@ public class Usuario extends AbstractEntity {
 	private String telefone;
 	@Column
 	private Date dataNascimento;
-	@OneToMany
-	private List<Endereco> endereco;
-	@OneToOne
-	private Login login;
+	@OneToMany(mappedBy = "usuario")
+	private List<Endereco> enderecos;
+	@OneToMany(mappedBy = "usuario")
+	private List<Mensagem> mensagens;
+	@Column
+	private String login;
+	@Column
+	private String senha;
 
 	public String getId() {
 		return id;
@@ -76,20 +79,36 @@ public class Usuario extends AbstractEntity {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public List<Endereco> getEndereco() {
-		return endereco;
+	public List<Endereco> getEnderecos() {
+		return enderecos;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
-		this.endereco = endereco;
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
 	}
 
-	public Login getLogin() {
+	public List<Mensagem> getMensagens() {
+		return mensagens;
+	}
+
+	public void setMensagens(List<Mensagem> mensagens) {
+		this.mensagens = mensagens;
+	}
+
+	public String getLogin() {
 		return login;
 	}
 
-	public void setLogin(Login login) {
+	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public static long getSerialversionuid() {

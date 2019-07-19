@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -28,6 +30,9 @@ public class Mensagem extends AbstractEntity {
 	private Integer cod;
 	@Column
 	private Date data;
+	@ManyToOne
+	@JoinColumn
+	private Usuario usuario;
 
 	public String getId() {
 		return id;
