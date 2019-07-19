@@ -12,6 +12,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class Mensagem extends AbstractEntity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7243870579746745439L;
 	@Id
 	@GeneratedValue(generator = UUID)
 	@GenericGenerator(name = UUID, strategy = ORG_HIBERNATE_ID_UUID_GENERATOR)

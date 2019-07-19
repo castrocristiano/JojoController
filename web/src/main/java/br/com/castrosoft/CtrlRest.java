@@ -20,6 +20,7 @@ public class CtrlRest {
 	@GetMapping("/")
     public MensagemDto home() {
 		MensagemDto m = new MensagemDto(EMensagens.BEM_VINDO);
+		mensagemController.salvar(m);
         return m;
     }
 	
