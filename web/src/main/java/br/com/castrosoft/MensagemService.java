@@ -12,7 +12,7 @@ import br.com.castrosoft.commons.enums.EMensagens;
 import br.com.castrosoft.controller.MensagemController;
 
 @RestController
-public class CtrlRest {
+public class MensagemService {
 	
 	@Autowired
 	private MensagemController mensagemController;

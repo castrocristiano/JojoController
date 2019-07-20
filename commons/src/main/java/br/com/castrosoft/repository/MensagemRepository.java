@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import br.com.castrosoft.entities.Mensagem;
 
-public interface MensagemRepository extends CrudRepository<Mensagem, Integer>{
+public interface MensagemRepository extends CrudRepository<Mensagem, String> {
 
 }
