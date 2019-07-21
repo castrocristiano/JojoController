@@ -32,10 +32,10 @@ public class Usuario extends AbstractEntity {
 	@Column
 	private Date dataNascimento;
 	@Lazy
-	@OneToMany(mappedBy = "usuario")
+	@OneToMany
 	private List<Endereco> enderecos;
 	@Lazy
-	@OneToMany(mappedBy = "usuario")
+	@OneToMany
 	private List<Mensagem> mensagens;
 	@Column
 	private String login;

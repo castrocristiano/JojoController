@@ -1,5 +1,7 @@
 package br.com.castrosoft;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,11 +26,25 @@ public class MensagemService {
         return m;
     }
 	
+	@GetMapping("/mensagem/listar")
+	public List<MensagemDto> listar() {
+		List<MensagemDto> mensagens = mensagemController.listar();
+		
+		return mensagens;
+	}
+	
+	@GetMapping("/mensagem/salvar")
+	public void salvar(@RequestBody MensagemDto mensagem) {
+		mensagemController.salvar(mensagem);
+	}
+	
 	@PostMapping(path = "/acao")
 	public MensagemDto acao(@RequestBody AcaoDto acao) {
 		MensagemDto m = new MensagemDto(EMensagens.ACAO, acao.getDescricao());
 		mensagemController.salvar(m);
 		return m;
 	}
+	
+	
 	
 }

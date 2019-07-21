@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.context.annotation.Lazy;
 
 @Entity
 public class Mensagem extends AbstractEntity {
@@ -32,6 +33,7 @@ public class Mensagem extends AbstractEntity {
 	private Date data;
 	@ManyToOne
 	@JoinColumn
+	@Lazy
 	private Usuario usuario;
 
 	public String getId() {
@@ -73,4 +75,13 @@ public class Mensagem extends AbstractEntity {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }

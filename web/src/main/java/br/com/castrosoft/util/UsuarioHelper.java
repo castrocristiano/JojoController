@@ -1,7 +1,6 @@
 package br.com.castrosoft.util;
 
 import br.com.castrosoft.commons.dto.UsuarioDto;
-import br.com.castrosoft.entities.Mensagem;
 import br.com.castrosoft.entities.Usuario;
 
 public class UsuarioHelper {
@@ -34,7 +33,9 @@ public class UsuarioHelper {
 		return dto;
 	}
 	
-	public static Mensagem factory() {
-		return new Mensagem();
+	public static Usuario factory(String id) {
+		Usuario u = new Usuario();
+		u.setId(id);
+		return u;
 	}
 }

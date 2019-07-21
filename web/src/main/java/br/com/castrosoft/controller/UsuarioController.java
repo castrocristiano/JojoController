@@ -10,4 +10,7 @@ public interface UsuarioController {
 	public List<UsuarioDto> getUsuarios();
 	
 	public Usuario salvarUsuario(UsuarioDto usuario);
+
+	public Usuario getUsuario(String idUsuario);
+	
 }

@@ -18,8 +18,6 @@ public class UsuarioControllerImpl implements UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	public List<UsuarioDto> usuarioDtos;
-
 	@Override
 	public List<UsuarioDto> getUsuarios() {
 		Iterable<Usuario> usuarios = usuarioRepository.findAll();
@@ -39,7 +37,11 @@ public class UsuarioControllerImpl implements UsuarioController {
 		Usuario salvo = usuarioRepository.save(eUsuario);
 		return salvo;
 	}
-	
-	
+
+	@Override
+	public Usuario getUsuario(String idUsuario) {
+		Usuario usuario = usuarioRepository.findOne(idUsuario);
+		return usuario;
+	}
 
 }
