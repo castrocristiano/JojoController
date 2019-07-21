@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.context.annotation.Lazy;
 
 @Entity
 public class Usuario extends AbstractEntity {
@@ -30,8 +31,10 @@ public class Usuario extends AbstractEntity {
 	private String telefone;
 	@Column
 	private Date dataNascimento;
+	@Lazy
 	@OneToMany(mappedBy = "usuario")
 	private List<Endereco> enderecos;
+	@Lazy
 	@OneToMany(mappedBy = "usuario")
 	private List<Mensagem> mensagens;
 	@Column

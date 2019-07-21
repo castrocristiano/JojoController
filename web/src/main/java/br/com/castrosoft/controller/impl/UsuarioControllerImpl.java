@@ -33,4 +33,13 @@ public class UsuarioControllerImpl implements UsuarioController {
 		return dtos;
 	}
 
+	@Override
+	public Usuario salvarUsuario(UsuarioDto usuario) {
+		Usuario eUsuario = UsuarioHelper.convertDtoToEntidade(usuario);
+		Usuario salvo = usuarioRepository.save(eUsuario);
+		return salvo;
+	}
+	
+	
+
 }
