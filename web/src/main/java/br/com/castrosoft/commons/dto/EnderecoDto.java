@@ -1,38 +1,13 @@
-package br.com.castrosoft.entities;
+package br.com.castrosoft.commons.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.GenericGenerator;
-
-@Entity
-public class Endereco extends AbstractEntity {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5157074402219304813L;
-	@Id
-	@GeneratedValue(generator = UUID)
-	@GenericGenerator(name = UUID, strategy = ORG_HIBERNATE_ID_UUID_GENERATOR)
+public class EnderecoDto {
 	private String id;
-	@Column
 	private String logradouro;
-	@Column
 	private Integer numero;
-	@Column
 	private String bairro;
-	@Column
 	private Integer cep;
-	@Column
 	private String cidade;
-	@Column
 	private String uf;
-	@ManyToOne
-	private Usuario usuario;
 
 	public String getId() {
 		return id;
@@ -90,16 +65,10 @@ public class Endereco extends AbstractEntity {
 		this.uf = uf;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "EnderecoDto [id=" + id + ", logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro
+				+ ", cep=" + cep + ", cidade=" + cidade + ", uf=" + uf + "]";
 	}
 
 }

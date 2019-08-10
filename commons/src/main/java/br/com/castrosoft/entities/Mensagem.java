@@ -31,9 +31,8 @@ public class Mensagem extends AbstractEntity {
 	private Integer cod;
 	@Column
 	private Date data;
-	@ManyToOne
-	@JoinColumn
 	@Lazy
+	@ManyToOne
 	private Usuario usuario;
 
 	public String getId() {

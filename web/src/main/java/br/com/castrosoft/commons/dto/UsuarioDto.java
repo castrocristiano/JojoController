@@ -12,8 +12,7 @@ public class UsuarioDto {
 	private String email;
 	private String telefone;
 	private Date dataNascimento;
-	private List<Endereco> enderecos;
-	private List<Mensagem> mensagens;
+	private List<EnderecoDto> enderecos;
 	private String login;
 	private String senha;
 
@@ -57,20 +56,12 @@ public class UsuarioDto {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public List<Endereco> getEnderecos() {
+	public List<EnderecoDto> getEnderecos() {
 		return enderecos;
 	}
 
-	public void setEnderecos(List<Endereco> enderecos) {
+	public void setEnderecos(List<EnderecoDto> enderecos) {
 		this.enderecos = enderecos;
-	}
-
-	public List<Mensagem> getMensagens() {
-		return mensagens;
-	}
-
-	public void setMensagens(List<Mensagem> mensagens) {
-		this.mensagens = mensagens;
 	}
 
 	public String getLogin() {
@@ -92,8 +83,8 @@ public class UsuarioDto {
 	@Override
 	public String toString() {
 		return "UsuarioDto [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone
-				+ ", dataNascimento=" + dataNascimento + ", enderecos=" + enderecos + ", mensagens=" + mensagens
-				+ ", login=" + login + ", senha=" + senha + "]";
+				+ ", dataNascimento=" + dataNascimento + ", enderecos=" + enderecos + ", login=" + login + ", senha="
+				+ senha + "]";
 	}
 
 }
