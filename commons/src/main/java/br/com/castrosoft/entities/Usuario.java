@@ -3,7 +3,6 @@ package br.com.castrosoft.entities;
 import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,10 +32,10 @@ public class Usuario extends AbstractEntity {
 	@Column
 	private Date dataNascimento;
 	@Lazy
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario")
 	private List<Endereco> enderecos;
 	@Lazy
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario")
 	private List<Mensagem> mensagens;
 	@Column
 	private String login;

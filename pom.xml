@@ -36,11 +36,6 @@
 			<version>1.5.10.RELEASE</version>
 		</dependency>
 		
-		<dependency>
-		    <groupId>postgresql</groupId>
-		    <artifactId>postgresql</artifactId>
-		    <version>9.1-901-1.jdbc4</version>
-		</dependency>
 
 		<!-- Use MySQL Connector-J -->
 
