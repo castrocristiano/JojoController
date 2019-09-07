@@ -12,5 +12,7 @@ public interface UsuarioController {
 	public Usuario salvarUsuario(UsuarioDto usuario);
 
 	public Usuario getUsuario(String idUsuario);
+
+	public Usuario salvarUsuario(UsuarioDto usuario, String login, String senha);
 	
 }

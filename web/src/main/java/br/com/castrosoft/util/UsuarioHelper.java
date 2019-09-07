@@ -16,10 +16,15 @@ public class UsuarioHelper {
 		usuario.setEmail(dto.getEmail());
 		usuario.setEnderecos(EnderecoHelper.convertToEnderecosEntidade(dto.getEnderecos()));
 		usuario.setId(dto.getId());
-		usuario.setLogin(dto.getLogin());
 		usuario.setNome(dto.getNome());
-		usuario.setSenha(dto.getSenha());
 		usuario.setTelefone(dto.getTelefone());
+		return usuario;
+	}
+	
+	public static Usuario convertDtoToEntidade(UsuarioDto dto, String login, String senha) {
+		Usuario usuario = convertDtoToEntidade(dto);
+		usuario.setLogin(login);
+		usuario.setSenha(senha);
 		return usuario;
 	}
 	
@@ -36,9 +41,7 @@ public class UsuarioHelper {
 		dto.setEnderecos(EnderecoHelper.convertToEnderecosDtos(usuario.getEnderecos()));
 		dto.setMensagens(mensagens);
 		dto.setId(usuario.getId());
-		dto.setLogin(usuario.getLogin());
 		dto.setNome(usuario.getNome());
-		dto.setSenha(usuario.getSenha());
 		dto.setTelefone(usuario.getTelefone());
 		return dto;
 	}

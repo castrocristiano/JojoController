@@ -32,8 +32,8 @@ public class UsuarioControllerImpl implements UsuarioController {
 	}
 
 	@Override
-	public Usuario salvarUsuario(UsuarioDto usuario) {
-		Usuario eUsuario = UsuarioHelper.convertDtoToEntidade(usuario);
+	public Usuario salvarUsuario(UsuarioDto usuario, String login, String senha) {
+		Usuario eUsuario = UsuarioHelper.convertDtoToEntidade(usuario, login, senha);
 		Usuario salvo = usuarioRepository.save(eUsuario);
 		return salvo;
 	}
@@ -42,6 +42,12 @@ public class UsuarioControllerImpl implements UsuarioController {
 	public Usuario getUsuario(String idUsuario) {
 		Usuario usuario = usuarioRepository.findOne(idUsuario);
 		return usuario;
+	}
+
+	@Override
+	public Usuario salvarUsuario(UsuarioDto usuario) {
+		Usuario salvo = usuarioRepository.save(UsuarioHelper.convertDtoToEntidade(usuario));
+		return salvo;
 	}
 
 }
