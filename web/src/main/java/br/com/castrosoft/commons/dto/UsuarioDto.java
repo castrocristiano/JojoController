@@ -3,9 +3,6 @@ package br.com.castrosoft.commons.dto;
 import java.sql.Date;
 import java.util.List;
 
-import br.com.castrosoft.entities.Endereco;
-import br.com.castrosoft.entities.Mensagem;
-
 public class UsuarioDto {
 	private String id;
 	private String nome;
@@ -13,6 +10,7 @@ public class UsuarioDto {
 	private String telefone;
 	private Date dataNascimento;
 	private List<EnderecoDto> enderecos;
+	private List<MensagemDto> mensagens;
 	private String login;
 	private String senha;
 
@@ -80,11 +78,19 @@ public class UsuarioDto {
 		this.senha = senha;
 	}
 
+	public List<MensagemDto> getMensagens() {
+		return mensagens;
+	}
+
+	public void setMensagens(List<MensagemDto> mensagens) {
+		this.mensagens = mensagens;
+	}
+
 	@Override
 	public String toString() {
 		return "UsuarioDto [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone
-				+ ", dataNascimento=" + dataNascimento + ", enderecos=" + enderecos + ", login=" + login + ", senha="
-				+ senha + "]";
+				+ ", dataNascimento=" + dataNascimento + ", enderecos=" + enderecos + ", mensagens=" + mensagens
+				+ ", login=" + login + ", senha=" + senha + "]";
 	}
 
 }

@@ -1,5 +1,10 @@
 package br.com.castrosoft.util;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import br.com.castrosoft.commons.dto.MensagemDto;
 import br.com.castrosoft.commons.dto.UsuarioDto;
 import br.com.castrosoft.entities.Usuario;
 
@@ -20,9 +25,16 @@ public class UsuarioHelper {
 	
 	public static UsuarioDto convertEndidade(Usuario usuario) {
 		UsuarioDto dto = new UsuarioDto();
+		List<MensagemDto> mensagens = new ArrayList<>();
+		if (Objects.nonNull(usuario.getMensagens())) {
+			usuario.getMensagens().forEach(m -> {
+				mensagens.add(MensagemHelper.convertToDto(m));
+			});
+		}
 		dto.setDataNascimento(usuario.getDataNascimento());
 		dto.setEmail(usuario.getEmail());
 		dto.setEnderecos(EnderecoHelper.convertToEnderecosDtos(usuario.getEnderecos()));
+		dto.setMensagens(mensagens);
 		dto.setId(usuario.getId());
 		dto.setLogin(usuario.getLogin());
 		dto.setNome(usuario.getNome());
